@@ -1,5 +1,13 @@
 import './App.css';
+import { BaseLayout } from './layouts';
+import { Home } from './pages';
 
-function App() {}
+function App() {
+    return (
+        <BaseLayout>
+            <Home/>
+        </BaseLayout>
+    )
+}
 
 export default App;

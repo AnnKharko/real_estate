@@ -1,2 +1,3 @@
-export * from './house-item';
-export * from './house-list';
+export * from './home-item';
+export * from './home-list';
+
