@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 
 import { HomeList } from '../components';
 import { homeService } from '../services';
-import { styles } from './home.module.css';
+import styles from './home.module.css';
 
 export const Home = () => {
     const [homeList, setHomeList] = useState([]);
