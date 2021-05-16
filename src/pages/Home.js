@@ -31,7 +31,7 @@ export const Home = () => {
     return (
        <div>
            {isLoading || isLoading === null ? renderLoadingIndicator() : <HomeList/>}
-           < HomeList />
+           < HomeList  items={homeList}/>
        </div>
     )
 
