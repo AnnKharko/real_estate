@@ -6,12 +6,14 @@ import styles from './home.module.css';
 
 export const Home = () => {
     const [homeList, setHomeList] = useState([]);
-    const [isLoading, setIsLoading] = useState([null]);
+    const [isLoading, setIsLoading] = useState(null);
     const FetchHomes = async () => {
         try{
-            setIsLoading(true)
+            setIsLoading(true);
             const data = await homeService.getAllHomes();
+            console.log('|||||||||||||||');
             console.log(data);
+            console.log('|||||||||||||||');
             setHomeList(data);
         }catch (e) {
             console.error(e);
@@ -30,8 +32,8 @@ export const Home = () => {
     )
     return (
        <div>
-           {isLoading || isLoading === null ? renderLoadingIndicator() : <HomeList/>}
-           < HomeList  items={homeList}/>
+           {isLoading || isLoading === null ? renderLoadingIndicator() : <HomeList items={homeList}/>}
+           {/*< HomeList  items={homeList}/>*/}
        </div>
     )
 

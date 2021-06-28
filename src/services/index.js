@@ -9,8 +9,14 @@ const AXIOS = axios.create({
 
 class HomeService {
    async getAllHomes(){
-       const { data } = await AXIOS.get('/homes')
-       return data;
+      try {
+          // const { data } = await AXIOS.get('/homes');
+          const response = await AXIOS.get('/homes');
+
+          return response;
+      } catch (e) {
+          alert(e.response.data);
+      }
     };
 
     getHomeById(id){
