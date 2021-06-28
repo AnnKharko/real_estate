@@ -9,7 +9,7 @@ export const HomeList = ({items}) => {
     return (
         <div>
             <h3>this is HomeList component</h3>
-            {items.map((item, index) => <HomeItem key={index}/>)}
+            {items.map((item, index) => <HomeItem key={index} props={item} />)}
         </div>
     )
 };

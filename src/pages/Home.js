@@ -11,9 +11,7 @@ export const Home = () => {
         try{
             setIsLoading(true);
             const data = await homeService.getAllHomes();
-            console.log('|||||||||||||||');
-            console.log(data);
-            console.log('|||||||||||||||');
+
             setHomeList(data);
         }catch (e) {
             console.error(e);

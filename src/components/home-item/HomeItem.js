@@ -1,9 +1,13 @@
 import React from "react";
 
 export const HomeItem = ({props}) => {
+    console.log('|||||||||||||||');
+    console.log(props);
+    console.log('|||||||||||||||');
     return(
         <div>
-            this is HomeItem component
+            <p> this is home item</p>
+
         </div>
     )
 }
