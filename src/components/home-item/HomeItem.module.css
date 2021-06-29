@@ -1,0 +1,12 @@
+.wrap {
+    border: 2px solid gray;
+    margin-bottom: 5px;
+    height: 400px;
+    width: 400px;
+    background-color: cyan;
+}
+.photo {
+    height: 200px;
+    width: 200px;
+    background-color: darkcyan;
+}
