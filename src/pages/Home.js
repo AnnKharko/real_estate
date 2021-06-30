@@ -10,38 +10,40 @@ export const Home = () => {
 
     const {note, wishlist, homes} = useSelector(({note:{note}, wishlist:{wishlist}, homes: {homes}}) => ({note, wishlist, homes}));
 
-    const [homeList, setHomeList] = useState([]);
-    const [isLoading, setIsLoading] = useState(null);
+    // const [homeList, setHomeList] = useState([]);
+    // const [isLoading, setIsLoading] = useState(null);
 
     const dispatch = useDispatch();
 
-    const FetchHomes = async () => {
-        try{
-            setIsLoading(true);
-            const data = await homeService.getAllHomes();
-
-            setHomeList(data);
-            dispatch(setHomes(data));
-        }catch (e) {
-            console.error(e);
-        }
-        finally {
-            setIsLoading(false)
-        }
-    }
+    // const FetchHomes = async () => {
+    //     try{
+    //         setIsLoading(true);
+    //         const data = await homeService.getAllHomes();
+    //
+    //         setHomeList(data);
+    //         dispatch(setHomes(data));
+    //     }catch (e) {
+    //         console.error(e);
+    //     }
+    //     finally {
+    //         setIsLoading(false)
+    //     }
+    // }
 
     useEffect(() => {
-        FetchHomes();
-    },[])
+        // FetchHomes();
+                dispatch(setHomes());
 
-    const renderLoadingIndicator = () => (
-        <div className={styles.loading}> Loading...</div>
-    )
+    },[])
+    //
+    // const renderLoadingIndicator = () => (
+    //     <div className={styles.loading}> Loading...</div>
+    // )
     return (
        <div>
            <p>{note.length} {wishlist.length} {homes.length}</p>
-           {isLoading || isLoading === null ? renderLoadingIndicator() : <HomeList items={homeList}/>}
-           {/*< HomeList  items={homeList}/>*/}
+           {/*{isLoading || isLoading === null ? renderLoadingIndicator() : <HomeList items={homeList}/>}*/}
+           < HomeList  items={homes}/>
        </div>
     )
 

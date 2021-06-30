@@ -1,0 +1,1 @@
+export const TOGGLE_HOME_IN_NOTE = 'TOGGLE_HOME_IN_NOTE';

@@ -1,8 +1,9 @@
-import { createStore } from "redux";
+import { createStore, applyMiddleware } from "redux";
 
 import { reducer } from './reducers';
+import thunk from "redux-thunk";
 
-export const store = createStore(reducer);
+export const store = createStore(reducer, applyMiddleware(thunk)); //TODO MIDDLEWARE SAVE STORE IN LOCALSTORAGE
 
 export * from './action-types';
 export * from './action-creators';
