@@ -8,5 +8,5 @@ import wishlist from './wishlist';
 export const reducer = combineReducers({
     note,
     wishlist,
-    homes
-})
+    homes,
+});
