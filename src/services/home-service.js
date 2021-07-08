@@ -11,9 +11,14 @@ class HomeService {
         }
     };
 
-    getHomeById(id){
-        return AXIOS.get(`/homes/${id}`)
-    }
-};
+    async getHomeById(id){
+       try {
+           const { data } = await AXIOS.get(`/homes/${id}`);
+           return data;
+       } catch (e) {
+           alert(e.response.data);
+       }
+    };
+}
 
 export const homeService = new HomeService();

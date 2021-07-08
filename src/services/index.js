@@ -3,7 +3,6 @@
 // const AXIOS = axios.create({
 //     baseURL: 'http://localhost:5000',
 // })
-
 // class HomeService {
 //    async getAllHomes(){
 //       try {

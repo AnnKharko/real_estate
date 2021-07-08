@@ -15,3 +15,5 @@ class RealtorService {
         return AXIOS.get(`/realtors/${id}`)
     }
 };
+
+export const realtorService = new RealtorService();

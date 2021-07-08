@@ -6,5 +6,5 @@ export const setHomes = () => async (dispatch) => {
             const data = await homeService.getAllHomes();
             dispatch({ type: SET_HOMES, payload: data});
 
-}
+};
 

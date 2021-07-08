@@ -1,9 +1,24 @@
-import React from 'react';
+import React, {useEffect} from 'react';
+import {useDispatch, useSelector} from "react-redux";
 
-export const RealtorList = ({items}) => {
+import { RealtorItem } from '../realtor-item';
+import { setRealtors} from '../../redux';
+
+
+export const RealtorList = () => {
+
+    const realtors = useSelector(({realtors: {realtors}}) => realtors);
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(setRealtors())
+    },[])
+
+
     return (
-        <h1>
-            HELLO FROM REALTORS
-        </h1>
+        <div>
+            { realtors.map((realtor, index) => <RealtorItem key={index} realtor={realtor}/>)}
+
+        </div>
     )
 }
