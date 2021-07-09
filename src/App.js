@@ -1,8 +1,8 @@
 import './App.css';
 import { BaseLayout } from './layouts';
-import {HomeDetails, Main} from './pages';
+import {HomeDetails, Main, RealtorInfo} from './pages';
 import {Switch, Route, useHistory} from 'react-router-dom';
-import {RealtorList, RealtorInfo, Login} from "./components";
+import {RealtorList, Login} from "./components";
 
 function App() {
     const history = useHistory();
@@ -16,10 +16,10 @@ function App() {
                 <Route path="/homes/:id" exact>
                     <HomeDetails/>
                 </Route>
-                <Route path="/realtors">
+                <Route path="/realtors" exact>
                     <RealtorList/>
                 </Route>
-                <Route path="/realtors/:id" exact>
+                <Route path="/realtors/:id" >
                     <RealtorInfo/>
                 </Route>
                 <Route path="/login">

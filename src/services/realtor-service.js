@@ -11,9 +11,15 @@ class RealtorService {
         }
     };
 
-    getRealtorById(id){
-        return AXIOS.get(`/realtors/${id}`)
+    async getRealtorById(id){
+       try {
+           const { data } = await AXIOS.get(`/realtors/${id}`);
+
+           return data;
+       } catch (e) {
+
+       }
     }
-};
+}
 
 export const realtorService = new RealtorService();

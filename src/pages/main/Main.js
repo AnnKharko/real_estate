@@ -12,8 +12,6 @@ export const Main = () => {
     const dispatch = useDispatch();
 
     const onHomeClick = ({_id}) => {
-        console.log('||||||||||||');
-        console.log(_id);
         history.push(`/homes/${_id}`);
     };
 

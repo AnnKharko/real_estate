@@ -1,22 +1,23 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from 'react-router-dom'
+import {useHistory, useParams} from 'react-router-dom'
 import { homeService } from "../../services";
 
 export const HomeDetails = () => {
     const {id} = useParams();
     const [homeDetails, setHomeDetails] = useState(null);
+    const history = useHistory();
+
     const getHomeDetails = async () => {
         const data = await homeService.getHomeById(id)
-        console.log(data);
-
         setHomeDetails(data);
+    };
+    const handleClick = (realtorId) => {
+        history.push(`/realtors/${realtorId}`);
     };
 
    useEffect(() => {
         getHomeDetails();
    },[]);
-
-    console.log(homeDetails);
 
     if (homeDetails === null) {
         return null;
@@ -29,7 +30,9 @@ export const HomeDetails = () => {
             <h1> {homeDetails.description}</h1>
 
             <h1> {homeDetails.district}</h1>
-            <h1> {homeDetails.WallMaterial}</h1>
+            <h3> {homeDetails.WallMaterial}</h3>
+            <button onClick={() => handleClick(homeDetails.realtor)}> connect with realtor</button>
+
         </div>
     )
 };
